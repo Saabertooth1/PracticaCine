@@ -42,7 +42,12 @@ public class Cine {
     }
 
     public String recogerEntradas (int id, int sala, int sesion){
-    	return this.sala[sala-1].recogerEntradas(id, sesion-1);
+        if (this.sala[sala-1].recogerEntradas(id, sesion-1) == null){
+            return null;
+        }
+        else {
+            return this.nombre + "@" + this.sala[sala - 1].recogerEntradas(id, sesion - 1);
+        }
     }
 
     public int getButacasDisponiblesSesion (int sala, int sesion){

@@ -58,17 +58,17 @@ public class Sesion {
 
     public String recogerEntradas (int id){
         String entrada = new String(hora + "+");
-        String aux = null;
+        String aux = "";
         for (int i = 0; i < estadoAsientos.length; i++){
             for (int j = 0; j < estadoAsientos[0].length; j++){
                 if (estadoAsientos[i][j] == id){
-                    String asientos = new String(i + "," + j + "+");
+                    String asientos = (i+1) + "," + (j+1) + "+";
                     aux = aux + asientos;
                 }
             }
         }
 
-        if (aux == null){
+        if (aux.equals("")){
             return null;
         }
 
@@ -82,10 +82,10 @@ public class Sesion {
         int butacasDisponibles = 0;
         ButacasContiguas butacasContiguas = null;
         for (int i = (estadoAsientos.length+1)/2+1; i < estadoAsientos.length || butacasDisponibles == noButacas; i++){
-            for (int j = estadoAsientos[0].length; j >= 1; j--){
+            for (int j = estadoAsientos[0].length-1; j >= 1; j--){
                 if (estadoAsientos[i][j] == 0){
                     for (int k = 0; k < noButacas ;k++){
-                        if (estadoAsientos[i][j+k] == 0){
+                        if (j-k > 0 && estadoAsientos[i][j-k] == 0){
                             butacasDisponibles++;
                         }else{
                             butacasDisponibles=0;
@@ -99,10 +99,10 @@ public class Sesion {
             }
         }
         for (int i = (estadoAsientos.length+1)/2; i > 0 || butacasDisponibles == noButacas; i--){
-            for (int j = estadoAsientos[0].length; j >= 1; j--){
+            for (int j = estadoAsientos[0].length-1; j >= 1; j--){
                 if (estadoAsientos[i][j] == 0){
                     for (int k = 0; k < noButacas ;k++){
-                        if (estadoAsientos[i][j+k] == 0){
+                        if (j-k > 0 && estadoAsientos[i][j-k] == 0){
                             butacasDisponibles++;
                         }else{
                             butacasDisponibles=0;

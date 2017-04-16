@@ -64,7 +64,13 @@ public class Sala {
     }
 
     public String recogerEntradas (int id, int sesion){
-        return sesiones.get(sesion).recogerEntradas(id);
+        if (this.sesiones.get(sesion).recogerEntradas(id) == null){
+            return null;
+
+        }
+        else{
+            return this.pelicula + "@" + this.sesiones.get(sesion).recogerEntradas(id);
+        }
 
     }
 
