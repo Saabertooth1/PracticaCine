@@ -14,9 +14,9 @@ public class VentanillaVirtualUsuario {
 	private Menu menuPrincipal;
 
 	private final String[] opcionesMenuPrincipal = {"Comprar Entrada", "Recoger Entrada",
-			"Consultar Estado Sesión", "Comprar con recomendación de butacas", "Salir"};
+			"Consultar Estado Sesiï¿½n", "Comprar con recomendaciï¿½n de butacas", "Salir"};
 	private final String[] opcionesObligatoriasMenuPrincipal = {"Comprar Entrada",
-			"Consultar Estado Sesión", "Salir"};
+			"Consultar Estado Sesiï¿½n", "Salir"};
 	private String operacion;
 	// indica si trabajamos con un menu completo 
 	// o solo con las operaciones obligatorias
@@ -91,7 +91,7 @@ public class VentanillaVirtualUsuario {
 					// comprobamos si la butaca esta ya vendida
 					if(estadoSesion[fila-1][columna-1] == '#'){
 						System.out.println("La butaca seleccionada "
-								+ "está ocupada, elige otra");
+								+ "estï¿½ ocupada, elige otra");
 						sigue = true;
 					}
 
@@ -168,6 +168,7 @@ public class VentanillaVirtualUsuario {
 				sesion);
 		// marcamos las butacas seleccionadas por el usuario en el estado actual
 		// de la sesion
+		//TODO PONER -2 SOLUCIONA PARA 3, PERO VUELVE A CRASHEAR CON 4
 		for(int i=0; i<butacas.getNoButacas(); i++)
 			estadoSesion[butacas.getFila()-1][butacas.getColumna()+i-1] = 'R';
 		

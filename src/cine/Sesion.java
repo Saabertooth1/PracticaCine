@@ -81,7 +81,25 @@ public class Sesion {
     public ButacasContiguas recomendarButacasContiguas (int noButacas){
         int butacasDisponibles = 0;
         ButacasContiguas butacasContiguas = null;
-        for (int i = (estadoAsientos.length+1)/2+1; i < estadoAsientos.length || butacasDisponibles == noButacas; i++){
+        for (int i = (estadoAsientos.length+1)/2+1; i < estadoAsientos.length && butacasDisponibles != noButacas; i++){
+            for (int j = estadoAsientos[0].length-1; j >= 1; j--){
+                if (estadoAsientos[i][j] == 0){
+                    for (int k = 0; k < noButacas ;k++){
+                        if (j-k > 0 && estadoAsientos[i][j-k] == 0){
+                            butacasDisponibles++;
+                        }else{
+                            butacasDisponibles=0;
+                        }
+                    }
+                }
+                if (butacasDisponibles == noButacas){
+                    ButacasContiguas aux = new ButacasContiguas(i,j,noButacas);
+                    butacasContiguas = aux;
+                    return butacasContiguas;
+                }
+            }
+        }
+        /**for (int i = (estadoAsientos.length+1)/2; i > 0 || butacasDisponibles == noButacas; i--){
             for (int j = estadoAsientos[0].length-1; j >= 1; j--){
                 if (estadoAsientos[i][j] == 0){
                     for (int k = 0; k < noButacas ;k++){
@@ -97,24 +115,7 @@ public class Sesion {
                     butacasContiguas = aux;
                 }
             }
-        }
-        for (int i = (estadoAsientos.length+1)/2; i > 0 || butacasDisponibles == noButacas; i--){
-            for (int j = estadoAsientos[0].length-1; j >= 1; j--){
-                if (estadoAsientos[i][j] == 0){
-                    for (int k = 0; k < noButacas ;k++){
-                        if (j-k > 0 && estadoAsientos[i][j-k] == 0){
-                            butacasDisponibles++;
-                        }else{
-                            butacasDisponibles=0;
-                        }
-                    }
-                }
-                if (butacasDisponibles == noButacas){
-                    ButacasContiguas aux = new ButacasContiguas(i,j,noButacas);
-                    butacasContiguas = aux;
-                }
-            }
-        }
+        }*/
         return butacasContiguas;
     }
 
