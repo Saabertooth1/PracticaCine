@@ -170,7 +170,7 @@ public class VentanillaVirtualUsuario {
 		// de la sesion
 		//TODO PONER -2 SOLUCIONA PARA 3, PERO VUELVE A CRASHEAR CON 4
 		for(int i=0; i<butacas.getNoButacas(); i++)
-			estadoSesion[butacas.getFila()-1][butacas.getColumna()+i-1] = 'R';
+			estadoSesion[butacas.getFila()-1][butacas.getColumna()+i-1] = 'R'; //+i-1 --> -i si funciona
 		
 		// mostramos la seleccion de butacas en consola
 		mostrarEstadoSesion(estadoSesion);
