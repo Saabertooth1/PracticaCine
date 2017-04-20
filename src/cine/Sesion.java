@@ -82,11 +82,11 @@ public class Sesion {
         int butacasDisponibles = 0;
         int vaux = 0;
         ButacasContiguas butacasContiguas = null;
-        for (int i = (estadoAsientos.length+1)/2+1; i < estadoAsientos.length && butacasDisponibles != noButacas; i++){
+        for (int i = (estadoAsientos.length+1)/2+1; i <= estadoAsientos.length && butacasDisponibles != noButacas; i++){
             for (int j = estadoAsientos[0].length-1; j >= 1; j--){
                 if (estadoAsientos[i-1][j] == 0){
                     for (int k = 0; k < noButacas ;k++){
-                        if (j-k > 0 && estadoAsientos[i-1][j-k] == 0){
+                        if (j-k >= 0 && estadoAsientos[i-1][j-k] == 0){
                             butacasDisponibles++;
                         }else{
                             butacasDisponibles=0;
