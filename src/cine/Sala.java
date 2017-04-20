@@ -7,9 +7,9 @@ import list.ArrayList;
         nombreAutor1 = "Ignacio",
         apellidoAutor1 = "de las Alas-Pumariño Martínez",
         emailUPMAutor1 = "i.dmartinez@alumnos.upm.es",
-        nombreAutor2 = "Adrián",
-        apellidoAutor2 = "",
-        emailUPMAutor2 = ""
+        nombreAutor2 = "Adrián Arley",
+        apellidoAutor2 = "Ochoa",
+        emailUPMAutor2 = "aa.ochoa@alumnos.upm.es"
 )
 
 /**
@@ -100,7 +100,6 @@ public class Sala {
     }//De comprarEntradasRecomendadas
 
     public void incluirSesion (String horaSesion){ //Añade una sesión a una sala
-        boolean done = false;
         int pos = 0;
         Sesion sesion = new Sesion(horaSesion, filas, columnas);
         for (int i = 0; i < sesiones.size(); i++){
