@@ -80,24 +80,26 @@ public class Sesion {
 
     public ButacasContiguas recomendarButacasContiguas (int noButacas){
         int butacasDisponibles = 0;
+        int vaux = 0;
         ButacasContiguas butacasContiguas = null;
         for (int i = (estadoAsientos.length+1)/2+1; i < estadoAsientos.length && butacasDisponibles != noButacas; i++){
             for (int j = estadoAsientos[0].length-1; j >= 1; j--){
-                if (estadoAsientos[i][j] == 0){
+                if (estadoAsientos[i-1][j] == 0){
                     for (int k = 0; k < noButacas ;k++){
-                        if (j-k > 0 && estadoAsientos[i][j-k] == 0){
+                        if (j-k > 0 && estadoAsientos[i-1][j-k] == 0){
                             butacasDisponibles++;
                         }else{
                             butacasDisponibles=0;
                         }
+                        vaux = j-k+1;
                     }
                 }
                 if (butacasDisponibles == noButacas){
-                    ButacasContiguas aux = new ButacasContiguas(i,j,noButacas);
+                    ButacasContiguas aux = new ButacasContiguas(i,vaux,noButacas);
                     butacasContiguas = aux;
                     return butacasContiguas;
                 }
-            }
+            } //Añadida variable vaux para la posicion de la columna elegida ya que j no cambia si se encuentran a la primera
         }
         /**for (int i = (estadoAsientos.length+1)/2; i > 0 || butacasDisponibles == noButacas; i--){
             for (int j = estadoAsientos[0].length-1; j >= 1; j--){
@@ -120,12 +122,12 @@ public class Sesion {
     }
 
     public void comprarEntradasRecomendadas (ButacasContiguas butacas){
-        for (int i = 0; i <= butacas.getNoButacas(); i++){
-            estadoAsientos[butacas.getFila()+i][butacas.getColumna()+i] = sigIdCompra;
+        for (int i = 0; i < butacas.getNoButacas(); i++){
+            estadoAsientos[butacas.getFila()-1][butacas.getColumna()-1+i] = sigIdCompra;
         }
         sigIdCompra++;
         asientosDisponibles = asientosDisponibles - butacas.getNoButacas();
-    }
+    }//Fila -1 y columna -1 + i para ir desplazandose hacia la derecha.
 
     public boolean equals (Sesion obj){
         return this.hora == obj.hora;
