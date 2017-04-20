@@ -3,37 +3,37 @@ package interfazusuario.menu;
 import java.util.Scanner;
 
 /**
- * <p align="justify">False que implementa un menú en pantalla.<BR>
- * Esta clase se encarga de generar un menú por consola a partir de un
- * vector de cadenas. Por defecto a cada opción del menú se le asigna un número. 
+ * <p align="justify">False que implementa un menï¿½ en pantalla.<BR>
+ * Esta clase se encarga de generar un menï¿½ por consola a partir de un
+ * vector de cadenas. Por defecto a cada opciï¿½n del menï¿½ se le asigna un nï¿½mero. 
  * Si se desea se puede indicar que utilice las letras del abecedario.</p> 
  * 
  * 
- * @author Ángel Lucas González Martínez
+ * @author ï¿½ngel Lucas Gonzï¿½lez Martï¿½nez
  * @version 0.1
  */
 public class Menu {//Menu
 	/**
-	 * Va a contener las cadenas que representan las opciones del menú.
+	 * Va a contener las cadenas que representan las opciones del menï¿½.
 	 */
 	private String [] opciones=null;
 	/**
-	 * Enumerado que definir las distintas formas de indicar cómo se selecciona una opción del menú.
+	 * Enumerado que definir las distintas formas de indicar cï¿½mo se selecciona una opciï¿½n del menï¿½.
 	 * @author agonzalez
 	 *
 	 */
 	public enum Numerar {NUMERO, LETRA_ABC};
 
 	/**
-	 * Atributo que indica cómo se han de numerar las opciones y que indica cuál es el tipo
+	 * Atributo que indica cï¿½mo se han de numerar las opciones y que indica cuï¿½l es el tipo
 	 * de valor que se espera.
 	 */
 	private Numerar numerar = Numerar.NUMERO;
 
 	/**
-	 * Constructor que recibe las opciones y cómo se han de numerar
-	 * @param opciones es el vector de cadenas de caracteres que se utilizará en el menú
-	 * @param numerar establece cómo se ha de numerar, y cual es el valor que ha de introducir el usuario para seleccionar una opción
+	 * Constructor que recibe las opciones y cï¿½mo se han de numerar
+	 * @param opciones es el vector de cadenas de caracteres que se utilizarï¿½ en el menï¿½
+	 * @param numerar establece cï¿½mo se ha de numerar, y cual es el valor que ha de introducir el usuario para seleccionar una opciï¿½n
 	 */
 	public Menu(String []opciones, Numerar numerar)
 	{//Constructor
@@ -42,17 +42,17 @@ public class Menu {//Menu
 	}//Constructor
 
 	/**
-	 * Constructor que recibe sólo las opciones. Las opciones se numerarán utilizando números
-	 * @param opciones es el vector de cadenas de caracteres que se utilizará en el menú
+	 * Constructor que recibe sï¿½lo las opciones. Las opciones se numerarï¿½n utilizando nï¿½meros
+	 * @param opciones es el vector de cadenas de caracteres que se utilizarï¿½ en el menï¿½
 	 */
 	public Menu(String [] opciones)
 	{//Menu
 		copiaOpciones(opciones);
 	}//Menu
 	/**
-	 * Servicio que activa el menú y retorna una cadea de caracteres con la opción seleccionada. 
-	 * @return String  con la opción seleccionada. Si el modo es númer ver Numerar.NUMERO el valor 
-	 * irá de 1 a n en cambio si es letra ver Numerar.LETRA_ABC el valor irá de 'a' a 'z'
+	 * Servicio que activa el menï¿½ y retorna una cadea de caracteres con la opciï¿½n seleccionada. 
+	 * @return String  con la opciï¿½n seleccionada. Si el modo es nï¿½mer ver Numerar.NUMERO el valor 
+	 * irï¿½ de 1 a n en cambio si es letra ver Numerar.LETRA_ABC el valor irï¿½ de 'a' a 'z'
 	 */
 	public String activar()
 	{//Activar
@@ -80,7 +80,7 @@ public class Menu {//Menu
 	}//Activar
 
 	/**
-	 * Servicio privado que sirve para copiar las opciones del menú que se pasan a cualquiera de los constructores dado	
+	 * Servicio privado que sirve para copiar las opciones del menï¿½ que se pasan a cualquiera de los constructores dado	
 	 * @param opciones contiene un vector de Strings con las opciones que va a tener el menu
 	 */
 	private void copiaOpciones (String []opciones)
@@ -93,7 +93,7 @@ public class Menu {//Menu
 	}//copia Opciones
 
 	/**
-	 * Método que se encarga de mostrar las opciones del menú anteponiendo un número o una letra según corresponda
+	 * MÃ©todo que se encarga de mostrar las opciones del menï¿½ anteponiendo un nï¿½mero o una letra segï¿½n corresponda
 	 * 
 	 */
 	private void mostrarOpciones()
