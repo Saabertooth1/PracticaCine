@@ -26,8 +26,8 @@ public class Sala {
 
         this.pelicula = pelicula;
         this.sesiones = new ArrayList<Sesion>();
-        int pos = 0;
         for (int i = 0; i < horasSesiones.length; i++){
+            int pos = 0;
             Sesion sesion = new Sesion(horasSesiones[i], filas, columnas);
             for (int j = 0; j < sesiones.size(); j++){
                 if (sesiones.get(j).getHora().compareTo(horasSesiones[i]) < 0){
