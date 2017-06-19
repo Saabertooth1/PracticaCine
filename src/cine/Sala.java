@@ -7,9 +7,9 @@ import list.ArrayList;
         nombreAutor1 = "Ignacio",
         apellidoAutor1 = "de las Alas-Pumariño Martínez",
         emailUPMAutor1 = "i.dmartinez@alumnos.upm.es",
-        nombreAutor2 = "Adrián",
-        apellidoAutor2 = "",
-        emailUPMAutor2 = ""
+        nombreAutor2 = "Adrián Arley",
+        apellidoAutor2 = "Ochoa",
+        emailUPMAutor2 = "aa.ochoa@alumnos.upm.es"
 )
 
 /**
@@ -25,9 +25,9 @@ public class Sala {
     public Sala (String pelicula, String[] horasSesiones, int filas, int columnas){
 
         this.pelicula = pelicula;
-        this.sesiones = new ArrayList();
-        int pos = 0;
+        this.sesiones = new ArrayList<Sesion>();
         for (int i = 0; i < horasSesiones.length; i++){
+            int pos = 0;
             Sesion sesion = new Sesion(horasSesiones[i], filas, columnas);
             for (int j = 0; j < sesiones.size(); j++){
                 if (sesiones.get(j).getHora().compareTo(horasSesiones[i]) < 0){
@@ -100,7 +100,6 @@ public class Sala {
     }//De comprarEntradasRecomendadas
 
     public void incluirSesion (String horaSesion){ //Añade una sesión a una sala
-        boolean done = false;
         int pos = 0;
         Sesion sesion = new Sesion(horaSesion, filas, columnas);
         for (int i = 0; i < sesiones.size(); i++){

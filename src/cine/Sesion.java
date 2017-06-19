@@ -7,9 +7,9 @@ import anotacion.Programacion2;
         nombreAutor1 = "Ignacio",
         apellidoAutor1 = "de las Alas-Pumariño Martínez",
         emailUPMAutor1 = "i.dmartinez@alumnos.upm.es",
-        nombreAutor2 = "Adrián",
-        apellidoAutor2 = "",
-        emailUPMAutor2 = ""
+        nombreAutor2 = "Adrián Arley",
+        apellidoAutor2 = "Ochoa",
+        emailUPMAutor2 = "aa.ochoa@alumnos.upm.es"
 )
 
 /**
