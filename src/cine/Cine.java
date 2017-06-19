@@ -19,10 +19,10 @@ public class Cine {
     private String nombre;
     private Sala[] salas;
 
-    public Cine(String nombre, Sala[] sala){
+    public Cine(String nombre, Sala[] salas){
 
         this.nombre = nombre;
-        this.salas =  sala;
+        this.salas =  salas;
 
     }//De constructor
 
