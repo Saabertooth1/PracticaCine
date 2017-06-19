@@ -25,7 +25,7 @@ public class Sala {
     public Sala (String pelicula, String[] horasSesiones, int filas, int columnas){
 
         this.pelicula = pelicula;
-        this.sesiones = new ArrayList();
+        this.sesiones = new ArrayList<Sesion>();
         int pos = 0;
         for (int i = 0; i < horasSesiones.length; i++){
             Sesion sesion = new Sesion(horasSesiones[i], filas, columnas);
