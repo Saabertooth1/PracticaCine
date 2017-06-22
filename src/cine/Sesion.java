@@ -145,7 +145,14 @@ public class Sesion {
         asientosDisponibles = asientosDisponibles - butacas.getNoButacas();
     }//De comprarEntradasRecomendadas
 
-    public boolean equals (Sesion obj){ //Método que comprueba si dos sesiones son iguales. Se considera que si lo son si coincide sus atributos hora
-        return this.hora.equals(obj.getHora());
+    public boolean equals (Object obj){ //Método que comprueba si dos sesiones son iguales. Se considera que si lo son si coincide sus atributos hora
+        Sesion aux = null;
+        if (obj instanceof Sesion && obj != null){
+            aux = (Sesion)obj;
+            return this.hora.equals(aux.hora);
+        }
+        else{
+            return false;
+        }
     } //De equals
 }//De Sesion
