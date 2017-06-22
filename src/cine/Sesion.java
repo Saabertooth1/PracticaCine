@@ -146,7 +146,6 @@ public class Sesion {
     }//De comprarEntradasRecomendadas
 
     public boolean equals (Sesion obj){ //Método que comprueba si dos sesiones son iguales. Se considera que si lo son si coincide sus atributos hora
-        return this.hora.equals(obj.hora);
-
+        return this.hora.equals(obj.getHora());
     } //De equals
 }//De Sesion
